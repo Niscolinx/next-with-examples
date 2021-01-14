@@ -1,6 +1,7 @@
 import Router from 'next/router'
 
 export default (context: any, target: string) => {
+    console.log('the redirect')
     if (context.res) {
         // server
         // 303: "See other"
