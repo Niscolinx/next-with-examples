@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import { Mutation } from 'react-apollo'
+import { gql } from 'apollo-boost'
 
 const IndexPage = () => (
     <Layout title='Home | Next.js + TypeScript Example'>
@@ -9,7 +11,19 @@ const IndexPage = () => (
                 <a>About</a>
             </Link>
         </p>
-       
+        <Mutation
+            mutation={gql`
+                mutation {
+                    login(email: "test@test.com", password: "gsjanf") {
+                        id
+                        name
+                        email
+                    }
+                }
+            `}
+        >
+            {() => <button>Call the Mutation</button>}
+        </Mutation>
     </Layout>
 )
 
