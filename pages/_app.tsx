@@ -8,11 +8,11 @@ class MyApp extends App<any> {
         const { Component, pageProps, apolloClient } = this.props
 
         return (
-            <Container>
+            <>
                 <ApolloProvider client={apolloClient}>
                     <Component {...pageProps} />
                 </ApolloProvider>
-            </Container>
+            </>
         )
     }
 }
