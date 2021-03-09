@@ -1,8 +1,8 @@
 import {
-    ApolloClient,
     InMemoryCache,
     NormalizedCacheObject,
 } from 'apollo-boost'
+import {ApolloClient} from "apollo-client";
 import { setContext } from 'apollo-link-context'
 import { createHttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
@@ -43,6 +43,7 @@ function create(initialState: any, { getToken }: Options) {
         cache: new InMemoryCache().restore(initialState || {}),
     })
 }
+
 
 export default function initApollo(initialState: any, options: Options) {
     // Make sure to create a new client for every server-side request so that data
