@@ -1,8 +1,8 @@
 import {
     InMemoryCache,
     NormalizedCacheObject,
+    ApolloClient
 } from 'apollo-boost'
-import {ApolloClient} from "apollo-client";
 import { setContext } from 'apollo-link-context'
 import { createHttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
@@ -21,7 +21,7 @@ interface Options {
 
 function create(initialState: any, { getToken }: Options) {
     const httpLink = createHttpLink({
-        uri: 'http://localhost:4000/graphql',
+        uri: 'http://localhost:4000/graphql/',
         credentials: 'include',
     })
 
