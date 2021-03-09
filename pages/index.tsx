@@ -22,7 +22,10 @@ const IndexPage = () => (
                 }
             `}
         >
-            {() => <button>Call the Mutation</button>}
+            {(mutate: () => any) => <button onClick={async() => {
+              const response = await mutate()
+              console.log({response})
+            }}> Call the Mutation</button>}
         </Mutation>
     </Layout>
 )
