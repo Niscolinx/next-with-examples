@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
+    "@types/cookie": "^0.4.0",
     "apollo-boost": "^0.4.9",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
