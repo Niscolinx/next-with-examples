@@ -15,7 +15,6 @@ const IndexPage = () => (
             mutation={gql`
                 mutation {
                     login(email: "test@test.com", password: "gsjanf") {
-                        id
                         name
                         email
                     }
