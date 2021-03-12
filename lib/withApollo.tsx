@@ -15,6 +15,8 @@ function parseCookies(req?: any, options = {}) {
 }
 
 export default (App: any) => {
+
+    console.log('with apollo')
     return class WithData extends React.Component {
         static displayName = `WithData(${App.displayName})`;
         static propTypes = {
@@ -95,6 +97,7 @@ export default (App: any) => {
         }
 
         render() {
+            console.log('rendered', this.props, this.apolloClient)
             return <App {...this.props} apolloClient={this.apolloClient} />;
         }
     };

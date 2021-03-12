@@ -21,8 +21,8 @@ interface Options {
 
 function create(initialState: any, { getToken }: Options) {
     const httpLink = createHttpLink({
-        uri: '/api/graphql',
-        credentials: 'same-origin',
+        uri: 'http://localhost:4000/graphql',
+        credentials: 'include',
     })
 
     const authLink = setContext((_, { headers }) => {
@@ -54,8 +54,11 @@ export default function initApollo(initialState: any, options: Options) {
 
     // Reuse client on the client-side
     if (!apolloClient) {
+
         apolloClient = create(initialState, options)
     }
+
+      console.log('working', apolloClient)
 
     return apolloClient
 }
