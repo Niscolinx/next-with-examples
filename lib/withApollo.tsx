@@ -16,7 +16,6 @@ function parseCookies(req?: any, options = {}) {
 
 export default (App: any) => {
     return class WithData extends React.Component {
-        console.log('withdata')
         static displayName = `WithData(${App.displayName})`;
         static propTypes = {
             apolloState: PropTypes.object.isRequired
