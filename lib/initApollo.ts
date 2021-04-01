@@ -8,7 +8,7 @@ import { createHttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
 import { isBrowser } from './isBrowser'
 
-let apolloClient: ApolloClient<NormalizedCacheObject> | null = null
+let apolloClient: ApolloClient<NormalizedCacheObject> | null
 
 // Polyfill fetch() on the server (used by apollo-client)
 if (!isBrowser) {

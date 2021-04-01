@@ -21,7 +21,7 @@ export default (App: any) => {
             apolloState: PropTypes.object.isRequired
         };
 
-        static async getInitialProps(ctx: any) {
+        static async getInitialProps(ctx: { ctx: any; Component?: any; router?: any; }) {
             const {
                 Component,
                 router,
